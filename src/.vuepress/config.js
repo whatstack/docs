@@ -137,7 +137,8 @@ module.exports = {
           path: '/'
         },
         getSideBar('/security', '🔐 Security'),
-        getSideBar('/open-source', '🆓 Open source')
+        getSideBar('/open-source', '🆓 Open source'),
+        getSideBar('/legal', '⚖️ Legal')
         // getSideBar('/how-to', 'How to?')
         // {
         //   title: 'No-Code Solutions',
