@@ -1,4 +1,5 @@
-[![license](https://img.shields.io/badge/©️_License-MIT-yellow?style=flat)](./LICENSE.md)
+[![license](https://img.shields.io/badge/License-UNLICENSED-red?style=flat)](./LICENSE.md)
+[![security policy](https://img.shields.io/badge/policy-SECURITY.md-red)](/SECURITY.md)
 [![](https://img.shields.io/badge/semver-2.0.0-informational)](https://semver.org)
 [![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/whatstack/docs)
 
