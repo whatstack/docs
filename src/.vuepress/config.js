@@ -1,6 +1,6 @@
 module.exports = {
   base: '/',
-  title: 'Docs',
+  title: 'WhatStack | Docs',
   description: 'WhatStack documentation',
   head: [],
   dest: 'dist',
@@ -86,7 +86,7 @@ module.exports = {
       disableThemeIgnore: true
     },
 
-    logo: '',
+    logo: '/logo-bgtransparent.png',
 
     // Footer options
     lastUpdated: '♻️ Last Updated',
@@ -114,7 +114,7 @@ module.exports = {
 
     // Navbar: Horizontal navigation
     nav: [
-      { text: 'App', link: 'https://app.whatstack.ioo' }
+      { text: '🌐 WhatStack', link: 'https://app.whatstack.io' }
       // {
       //   text: '🚀 Developers',
       //   ariaLabel: 'Developers',
@@ -133,10 +133,12 @@ module.exports = {
     sidebar: {
       '/': [
         {
-          title: 'WhatStack Documentation',
+          title: '🚀 Get Started',
           path: '/'
         },
-        getSideBar('/how-to', 'How to?')
+        getSideBar('/security', '🔐 Security'),
+        getSideBar('/open-source', '🆓 Open source')
+        // getSideBar('/how-to', 'How to?')
         // {
         //   title: 'No-Code Solutions',
         //   collapsable: true,
