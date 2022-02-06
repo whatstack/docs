@@ -4,7 +4,15 @@
   "description": "WhatStack documentation website repository",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "node ./node_modules/vuepress/cli.js dev ./src  --port 3000 --no-clear-screen",
+    "test": "find src -name '*.md' -not -path './node_modules/*' -exec npx --yes markdown-link-check '{}' --config ./build/makdown_links_check/.mlc_config.json --quiet ';' > ./build/makdown_links_check/links_check.log",
+    "build": "node ./node_modules/vuepress/cli.js build ./src --no-cache",
+    "commit": "git add . && npx --yes git-cz",
+    "release": "npm run release:minor",
+    "release:patch": "npx --yes standard-version --release-as patch",
+    "release:minor": "npx --yes standard-version --release-as minor",
+    "release:major": "npx --yes standard-version --release-as major",
+    "push": "git push --follow-tags origin main"
   },
   "repository": {
     "type": "git",
@@ -17,6 +25,7 @@
   },
   "homepage": "https://github.com/whatstack/docs#readme",
   "devDependencies": {
+    "@mr-hope/vuepress-plugin-copy-code": "^1.26.0",
     "sentence-case": "^3.0.4",
     "title-case": "^3.0.3",
     "vuepress": "^1.9.7",
