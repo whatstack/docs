@@ -48,6 +48,7 @@ jobs:
   deploy_job:
     
     name: Deploy Job
+    needs: build_publish_job
     runs-on: ubuntu-latest
     
     steps:
