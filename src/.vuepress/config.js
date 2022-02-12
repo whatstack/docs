@@ -3,7 +3,7 @@ module.exports = {
   title: 'WhatStack | Docs',
   description: 'WhatStack documentation',
   head: [],
-  dest: 'dist',
+  dest: 'docs',
   plugins: [
     '@vuepress/active-header-links', {
       sidebarLinkSelector: '.sidebar-link',
