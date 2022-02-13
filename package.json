@@ -1,12 +1,15 @@
 {
   "name": "docs",
   "version": "0.4.0",
-  "description": "WhatStack documentation website repository",
+  "description": "WhatStack docs",
   "main": "index.js",
   "scripts": {
-    "dev": "node ./node_modules/vuepress/cli.js dev ./src  --port 3000 --no-clear-screen",
+    "dev": "vuepress dev ./src  --port 3000 --no-clear-screen",
     "test": "find src -name '*.md' -not -path './node_modules/*' -exec npx --yes markdown-link-check '{}' --config ./build/makdown_links_check/.mlc_config.json --quiet ';' > ./build/makdown_links_check/links_check.log",
-    "build": "node ./node_modules/vuepress/cli.js build ./src --no-cache",
+    "build:convertyaml": "yaml2json --save src/.vuepress/public/api/latest/whatstack-openapi-definition.yaml",
+    "build:generatesdk": "openapi-generator-cli generate",
+    "build:docs": "vuepress build ./src --no-cache",
+    "build": "gulp build && npm run build:convertyaml && npm run build:generatesdk && npm run build:docs",
     "commit": "git add . && npx --yes git-cz",
     "release": "npm run release:minor",
     "release:patch": "npx --yes standard-version --release-as patch",
@@ -18,7 +21,7 @@
     "type": "git",
     "url": "git+https://github.com/whatstack/docs.git"
   },
-  "author": "Guillaume Meyer <guillaume@whatstack.io> (https://docs.whatstack.io)",
+  "author": "Guillaume Meyer <guillaume.meyer@outlook.com> (https://github.com/guillaumemeyer)",
   "license": "UNLICENSED",
   "bugs": {
     "url": "https://github.com/whatstack/docs/issues"
@@ -26,12 +29,17 @@
   "homepage": "https://github.com/whatstack/docs#readme",
   "devDependencies": {
     "@mr-hope/vuepress-plugin-copy-code": "^1.26.0",
+    "@openapitools/openapi-generator-cli": "^2.4.26",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
     "sentence-case": "^3.0.4",
+    "swagger-ui-dist": "^4.5.0",
     "title-case": "^3.0.3",
     "vuepress": "^1.9.7",
     "vuepress-plugin-autometa": "^0.1.13",
     "vuepress-plugin-code-copy": "^1.0.6",
     "vuepress-plugin-mermaidjs": "^1.9.0",
-    "vuepress-theme-yuu": "^3.1.1"
+    "vuepress-theme-yuu": "^3.1.1",
+    "yamljs": "^0.3.0"
   }
 }

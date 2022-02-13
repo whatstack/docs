@@ -1,0 +1,251 @@
+openapi: "3.0.3"
+
+info:
+  title: WhatStack API
+  description: >
+    Visit our [API documentation](https://docs.whatstack.io/api/) for more information.
+  version: "1.0.0"
+  termsOfService: https://docs.whatstack.io/legal/terms-of-service
+  contact:
+    name: Support
+    url: https://docs.whatstack.io/api
+    email: support@nbold.co
+  license:
+    name: (c) Copyright 2022 WhatStack - all rights reserved.
+    url: https://docs.whatstack.io/legal/terms-of-service
+
+servers:
+  - url: https://api.whatstack.io
+    description: Production environment
+
+tags:
+  - name: Domains
+    description: Domains.
+    externalDocs:
+      url: https://docs.whatstack.io/api/latest/reference/Apis/DomainsApi
+  - name: Technologies
+    description: Technologies.
+    externalDocs:
+      url: https://docs.whatstack.io/api/latest/reference/Apis/TechnologiesApi
+
+paths:
+  /domains/search:
+    post:
+      tags:
+        - Domains
+      summary: Perform a technology lookup against one or multiple domains
+      description: Perform a technology lookup against one or multiple domains. TIER 3
+      operationId: DomainsSearch
+      externalDocs:
+        url: https://docs.whatstack.io/api/latest/reference/Apis/DomainsApi#domainssearch
+      security:
+        - ApiKeyAuth: []
+      requestBody:
+        description: An array of domains
+        required: true
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/Domains"
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/DomainsSearchResults"
+
+  /technologies:
+    get:
+      tags:
+        - Technologies
+      summary: Retreive the list of technologies
+      description: Retreive the list of technologies. TIER 3
+      operationId: GetTechnologies
+      externalDocs:
+        url: https://docs.whatstack.io/api/latest/reference/Apis/TechnologiesApi#gettechnologies
+      security:
+        - ApiKeyAuth: []
+      responses:
+        "200":
+          description: OK
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/Technologies"
+
+components:
+  securitySchemes:
+    ApiKeyAuth: # arbitrary name for the security scheme
+      type: apiKey
+      in: header # can be "header", "query" or "cookie"
+      name: X-API-KEY # name of the header, query parameter or cookie
+
+  schemas:
+    Domains:
+      title: Domains
+      description: An array of domains.
+      type: array
+      items:
+        $ref: "#/components/schemas/Domain"
+
+    Domain:
+      title: Domain
+      description: A domain.
+      type: string
+
+    DomainsSearchResults:
+      title: DomainsSearchResults
+      description: An array of DomainsSearchResult.
+      type: array
+      items:
+        $ref: "#/components/schemas/DomainsSearchResult"
+
+    DomainsSearchResult:
+      title: DomainsSearchResult
+      description: DomainsSearchResult.
+      type: object
+      properties:
+        domain:
+          description: Domain
+          type: string
+        stack:
+          description: Stack
+          type: array
+          items:
+            $ref: "#/components/schemas/TechnologyResult"
+        profile:
+          description: Organization profile
+          type: object
+
+    TechnologyResult:
+      title: TechnologyResult
+      description: TechnologyResult.
+      type: object
+      properties:
+        code:
+          description: Technology code
+          type: string
+        name:
+          description: Technology name
+          type: string
+        category:
+          description: Technology category
+          type: string
+        logo:
+          description: Technology logo
+          type: string
+        origin:
+          description: Detection origin
+          type: string
+
+    Technologies:
+      title: Technologies
+      description: An array of technologies.
+      type: array
+      items:
+        $ref: "#/components/schemas/Technology"
+
+    Technology:
+      title: Technology
+      description: Technology.
+      type: object
+      properties:
+        code:
+          description: Technology code
+          type: string
+        name:
+          description: Technology name
+          type: string
+        category:
+          description: Technology category
+          type: string
+        logo:
+          description: Technology logo
+          type: string
+
+    ApiError:
+      title: API Error
+      description: A generic API error
+      type: object
+      properties:
+        "@odata.context":
+          description: oData context of the request
+          type: string
+        error:
+          description: JSON representation of the error
+          type: object
+          properties:
+            code:
+              description: The HTTP error code
+              type: string
+            message:
+              description: The error message
+              type: string
+            innerError:
+              description: JSON representation of the inner error (If available)
+              type: object
+              properties:
+                date:
+                  description: Inner error date
+                  type: string
+                  format: date-time
+                request-id:
+                  description: Server-side generated unique request identifier
+                  type: string
+
+  responses:
+    200:
+      description: OK - Indicates that the request has succeeded.
+    201:
+      description: Created - Indicates that the request has been fulfilled and has resulted in one or more new resources being created.
+    202:
+      description: Accepted - Indicates that the request has been accepted for processing, but the processing has not been completed.
+    400:
+      description: Bad Request - Indicates that the server cannot or will not process the request due to something that is perceived to be a client error (e.g., malformed request syntax, invalid request message framing, or deceptive request routing). See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    401:
+      description: Unauthorized - Indicates that the request has not been applied because it lacks valid authentication credentials for the target resource (e.g., missing or invalid access token or API key...). See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    402:
+      description: Payment Required - Indicates that the request can not be processed as the client doesn't have a valid subscription. See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    403:
+      description: Forbidden - Indicates that the server understood the request but refuses to authorize it. See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    404:
+      description: Not Found - Indicates that the origin server did not find a current representation for the target resource or is not willing to disclose that one exists. See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    429:
+      description: Too Many Requests - Your request has been throttled as you've reached the maximum number of concurrent calls to our service. Look at the "Retry-After" header. See [API throttling guidance](https://docs.nbold.co/api/throttling.html) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    500:
+      description: Internal Server Error - Indicates that the server encountered an unexpected condition that prevented it from fulfilling the request. See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"
+    503:
+      description: Service Unavailable - Indicates that the server is currently unable to handle the request due to a temporary overload or scheduled maintenance, which will likely be alleviated after some delay. See [Handling expected errors](https://docs.nbold.co/api/best-practices.html#handling-expected-errors) article for more information.
+      content:
+        application/json:
+          schema:
+            $ref: "#/components/schemas/ApiError"

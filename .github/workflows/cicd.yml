@@ -1,4 +1,4 @@
-name: Build, Publish and Deploy to Azure
+name: Build, Publish and Deploy
 
 on:
   push:
@@ -43,29 +43,3 @@ jobs:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           branch: published
           force: true
-          
-# Disabled as the website is now served by GitHub Pages
-
-# deploy_job:
-
-#   name: Deploy Job
-#   needs: build_publish_job
-#   runs-on: ubuntu-latest
-
-#   steps:
-#     - name: Checkout Published
-#       uses: actions/checkout@v2
-#       with:
-#         submodules: true
-#         ref: published
-
-#     - name: Deploy to Azure
-#       uses: Azure/static-web-apps-deploy@v1
-#       with:
-#         azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_ASHY_OCEAN_0D8A0C510 }}
-#         repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
-#         action: "upload"
-#         # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-#         app_location: "/dist" # App source code path
-#         api_location: "" # Api source code path - optional
-#         output_location: "" # Built app content directory - optional
