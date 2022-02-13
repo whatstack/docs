@@ -9,6 +9,7 @@ const ROOT_DIRECTORY = '.'
 const SRC_DIRECTORY = `${ROOT_DIRECTORY}/src`
 const PUBLIC_DIRECTORY = `${SRC_DIRECTORY}/.vuepress/public`
 const JS_DIRECTORY = `${PUBLIC_DIRECTORY}/js`
+const CSS_DIRECTORY = `${PUBLIC_DIRECTORY}/css`
 // #endregion DECLARATIONS
 
 // #region BUILD
@@ -33,8 +34,22 @@ const concatJs = (done) => {
   }
 }
 
+/**
+ * Concatenate css dependencies in one file
+ * @param {function} done - Callback()
+ */
+const concatCss = (done) => {
+  gulp.src([
+    './node_modules/swagger-ui-dist/swagger-ui.css'
+  ])
+    .pipe(concat('swagger-viewer.bundle.css'))
+    .pipe(gulp.dest(CSS_DIRECTORY))
+    .on('end', () => { done() })
+}
+
 // #region EXPORTS
 exports.build = gulp.series(
-  concatJs
+  concatJs,
+  concatCss
 )
 // #endregion EXPORTS

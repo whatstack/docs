@@ -1,5 +1,6 @@
 <template>
   <div>
+    <link rel="stylesheet" type="text/css" href="/css/swagger-viewer.bundle.css" />
     <div id='swagger-ui'></div>
   </div>
 </template>
@@ -52,7 +53,7 @@
                           // change spec.servers here to add new entry, use concat to put it as the first & default one
                           spec.servers = [
                             {
-                              url: 'https://gme-dev-api.ngrok.io/api/v1.0',
+                              url: 'https://gme-dev-api.ngrok.io',
                               description: 'Development Environment',
                             }
                           ].concat(spec.servers || [])
