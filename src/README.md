@@ -5,4 +5,4 @@ author: Guillaume Meyer
 position: 
 
 ---
-# 👋 Welcome to WhatStack Docs
+# Welcome to WhatStack Docs
