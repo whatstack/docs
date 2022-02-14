@@ -40,13 +40,13 @@ For requests to delete personal information or know what personal information ha
 
 If you are in the EU, you can identify your specific authority to file a complaint or find out more about GDPR, at [https://edpb.europa.eu/about-edpb/board/members_en](https://edpb.europa.eu/about-edpb/board/members_en).
 
-If you have questions about exercising these rights or need assistance, please contact us at [contact@whatstack.io](contact@whatstack.io).
+If you have questions about exercising these rights or need assistance, please contact us at [privacy@whatstack.io](privacy@whatstack.io).
 
 ## Changes & questions
 
 We may update this policy as needed to comply with relevant regulations and reflect any new practices. Whenever we make a significant change to our policies, we will also announce to customers and publicly.
 
-Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch by emailing us at [contact@whatstack.io](contact@whatstack.io) and we'll be happy to answer them!
+Have any questions, comments, or concerns about this privacy policy, your data, or your rights with respect to your information? Please get in touch by emailing us at [privacy@whatstack.io](privacy@whatstack.io) and we'll be happy to answer them!
 
 :::tip Company information
 **Gion Invest**  

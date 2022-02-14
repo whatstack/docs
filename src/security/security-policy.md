@@ -23,7 +23,7 @@ The following platform versions are currently being supported with security upda
 
 ## Reporting a Vulnerability
 
-If you believe you have discovered a vulnerability in our products or have a security incident to report, please send us a message to **[contact@whatstack.io](mailto:contact@whatstack.io)** (english as a preferred languages) that includes a detailed reports with reproducible steps.
+If you believe you have discovered a vulnerability in our products or have a security incident to report, please send us a message to **[security@whatstack.io](mailto:security@whatstack.io)** (english as a preferred languages) that includes a detailed reports with reproducible steps.
 
 ## Vulnerability disclosure policy
 We believe that vulnerability disclosure is a two-way street. Vendors, as well as researchers, must act responsibly.  

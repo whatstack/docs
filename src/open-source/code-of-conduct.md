@@ -34,7 +34,7 @@ This code of conduct applies to all repos and communities for open source projec
 
 ## Reporting issues
 
-We encourage all communities to resolve issues on their own whenever possible. This builds a broader and deeper understanding and ultimately a healthier interaction. In the event that an issue cannot be resolved locally, please feel free to report your concerns by contacting [contact@whatstack.io](mailto:contact@whatstack.io). Your report will be handled in accordance with the issue resolution process described in this document.
+We encourage all communities to resolve issues on their own whenever possible. This builds a broader and deeper understanding and ultimately a healthier interaction. In the event that an issue cannot be resolved locally, please feel free to report your concerns by contacting [codeofconduct@whatstack.io](mailto:codeofconduct@whatstack.io). Your report will be handled in accordance with the issue resolution process described in this document.
 
 In your report please include:
 - Your contact information.
@@ -78,11 +78,11 @@ This project has adopted the [WhatStack Open Source Code of Conduct](https://doc
 
 ### How do I raise a concern?
 
-If you have witnessed or been subjected to a violation of the Code of Conduct, please send an email to [contact@whatstack.io](mailto:contact@whatstack.io). Your message will be handled in a secure and confidential manner. This email address is monitored by people who are not active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting. You will receive a response within one business day acknowledging receipt of your email and describing the process for its resolution. (See below for more details.)
+If you have witnessed or been subjected to a violation of the Code of Conduct, please send an email to [codeofconduct@whatstack.io](mailto:codeofconduct@whatstack.io). Your message will be handled in a secure and confidential manner. This email address is monitored by people who are not active in open source projects or communities — so you can be sure that you are not communicating with a person involved in the issue you are reporting. You will receive a response within one business day acknowledging receipt of your email and describing the process for its resolution. (See below for more details.)
 
 ### What is the process for addressing issues that arise?
 
-Emails sent to [contact@whatstack.io](mailto:contact@whatstack.io) kick off the following process:
+Emails sent to [codeofconduct@whatstack.io](mailto:codeofconduct@whatstack.io) kick off the following process:
 - Your message will be acknowledged within one business day.
 - Within the following business days, a small, 2-3, person team will be assembled from a pool of our employee volunteers to review your concern. This team will be as diverse as possible given its size and will pull in additional people as needed to gain further insight and provide guidance. The team will not include anyone directly involved in the issue that has been raised.
 - From there team will work with you and the others involved to come to a conclusion. While issue complexity varies, the goal is to resolve issues within five working days.
