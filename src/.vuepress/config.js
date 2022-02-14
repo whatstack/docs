@@ -1,8 +1,10 @@
 module.exports = {
   base: '/',
-  title: 'WhatStack | Docs',
+  title: 'Docs',
   description: 'WhatStack documentation',
-  head: [],
+  head: [
+    ['link', { rel: 'icon', href: '/favicon.png' }]
+  ],
   dest: 'docs',
   plugins: [
     '@vuepress/active-header-links', {
@@ -75,9 +77,9 @@ module.exports = {
   themeConfig: {
 
     yuu: {
-      defaultDarkTheme: true,
+      defaultDarkTheme: false,
       disableDarkTheme: false,
-      colorThemes: ['blue', 'purple'], // green (default), blue, red, and purple
+      colorThemes: [], // green (default), blue, red, and purple
       defaultColorTheme: 'blue',
       labels: {
         darkTheme: '🌗 Dark Theme', // Default is "Enable Dark Theme?"
@@ -86,7 +88,7 @@ module.exports = {
       disableThemeIgnore: true
     },
 
-    logo: '/logo-bgtransparent.png',
+    logo: '/logo.svg',
 
     // Footer options
     lastUpdated: '♻️ Last Updated',
@@ -114,14 +116,16 @@ module.exports = {
 
     // Navbar: Horizontal navigation
     nav: [
+      {
+        text: '🚀 Developers',
+        ariaLabel: 'Developers',
+        items: [
+          { text: 'Get started', link: '/api/' },
+          { text: 'API explorer', link: '/api/explorer' },
+          { text: 'API reference', link: '/api/latest/reference/' }
+        ]
+      },
       { text: '🌐 WhatStack', link: 'https://app.whatstack.io' }
-      // {
-      //   text: '🚀 Developers',
-      //   ariaLabel: 'Developers',
-      //   items: [
-      //     { text: 'API Explorer', link: '/api/explorer' }
-      //   ]
-      // }
     ],
 
     // Sidebar options
@@ -136,22 +140,11 @@ module.exports = {
           title: '🚀 Get Started',
           path: '/'
         },
+        getSideBar('/how-to', 'How-to'),
+        getSideBar('/api', 'API'),
         getSideBar('/security', '🔐 Security'),
         getSideBar('/open-source', '🆓 Open source'),
         getSideBar('/legal', '⚖️ Legal')
-        // getSideBar('/how-to', 'How to?')
-        // {
-        //   title: 'No-Code Solutions',
-        //   collapsable: true,
-        //   sidebarDepth: 1,
-        //   children: [
-        //     ['/nocode/', 'Get Started'],
-        //     ['/nocode/naming-conventions.md', 'Naming conventions'],
-        //     ['/nocode/approval.md', 'Approval workflow'],
-        //     ['/nocode/audience-targeting.md', 'Audience Targeting'],
-        //     ['/nocode/ad-schema-extensions.md', 'AD Schema Extensions']
-        //   ]
-        // },
       ]
     }
   }

@@ -7,7 +7,7 @@
       "api_reference": {
         "generatorName": "markdown",
         "glob": "src/.vuepress/public/api/latest/whatstack-openapi-definition.yaml",
-        "output": "#{cwd}/src/api/production/reference"
+        "output": "#{cwd}/src/api/latest/reference"
       },
       "javascript_sdk": {
         "generatorName": "javascript",

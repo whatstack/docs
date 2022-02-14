@@ -1,5 +1,6 @@
 .babelrc
 .gitignore
+.openapi-generator-ignore
 .travis.yml
 README.md
 docs/ApiError.md
@@ -23,3 +24,11 @@ src/model/ApiErrorErrorInnerError.js
 src/model/DomainsSearchResult.js
 src/model/Technology.js
 src/model/TechnologyResult.js
+test/api/DomainsApi.spec.js
+test/api/TechnologiesApi.spec.js
+test/model/ApiError.spec.js
+test/model/ApiErrorError.spec.js
+test/model/ApiErrorErrorInnerError.spec.js
+test/model/DomainsSearchResult.spec.js
+test/model/Technology.spec.js
+test/model/TechnologyResult.spec.js
