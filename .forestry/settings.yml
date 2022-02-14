@@ -4,6 +4,16 @@ auto_deploy: false
 admin_path: src/.vuepress/public/admin
 webhook_url: 
 sections:
+- type: document
+  path: src/README.md
+  label: Homepage
+- type: directory
+  path: src/how-to
+  label: How-to
+  create: documents
+  match: "**/*"
+  templates:
+  - article
 - type: directory
   path: src/api
   label: API
@@ -11,10 +21,27 @@ sections:
   match: "**/*"
   templates:
   - article
-- type: document
-  path: src/README.md
-  label: Homepage
+- type: directory
+  path: src/security
+  label: Security
+  create: documents
   match: "**/*"
+  templates:
+  - article
+- type: directory
+  path: src/open-source
+  label: Open source
+  create: documents
+  match: "**/*"
+  templates:
+  - article
+- type: directory
+  path: src/legal
+  label: Legal
+  create: documents
+  match: "**/*"
+  templates:
+  - article
 upload_dir: src/.vuepress/public/media
 public_path: "/uploads"
 front_matter_path: ''
