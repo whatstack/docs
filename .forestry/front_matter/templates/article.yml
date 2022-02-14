@@ -36,3 +36,5 @@ fields:
     min: 0
     max: 100
     step: 1
+pages:
+- src/README.md
