@@ -38,3 +38,4 @@ fields:
     step: 1
 pages:
 - src/README.md
+- src/how-to/Test melchior.md
