@@ -1,4 +1,3 @@
-.openapi-generator-ignore
 Apis/DomainsApi.md
 Apis/TechnologiesApi.md
 Models/ApiError.md

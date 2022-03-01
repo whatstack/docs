@@ -3,6 +3,7 @@ module.exports = {
   title: 'Docs',
   description: 'WhatStack documentation',
   head: [
+    ['script', { type: 'text/javascript', src: '/js/gtm.js' }],
     ['link', { rel: 'icon', href: '/favicon.png' }]
   ],
   dest: 'docs',
